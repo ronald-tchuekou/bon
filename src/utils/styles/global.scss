@@ -1,0 +1,240 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.radio__input{
+  display: inline-block;
+  position: relative;
+  input{
+    position: absolute;
+    visibility: hidden;
+  }
+  input[type="radio"]:checked + .radio__preview .radio__state{
+    border-color: $primary;
+    background: $primary;
+  }
+  .radio__preview{
+    display: flex;
+    writing-mode: horizontal-tb;
+    align-items: center;
+    margin: 5px;
+    .radio__state{
+      width: 20px;
+      height: 20px;
+      border: 3px solid $primary;
+      border-radius: 50%;
+      transition: .3s;
+      margin: 0 5px;
+    }
+    .radio__label{
+      margin: 0 5px;
+      font: inherit;
+    }
+    &:hover {
+      cursor: pointer;
+      .radio__state{
+        border-color: $accent;
+      }
+    }
+    &.checked{
+      .radio__state{
+        border-color: $accent;
+        background: $primary;
+      }
+    }
+  }
+}
+
+.app__card{
+  border-radius: 5px;
+  background: $white;
+  color: $dark;
+  box-shadow: 1px 1px 10px 3px rgba(0, 0, 0, 0.15);
+  position: relative;
+  .card__header{
+    padding: 10px;
+    vertical-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card__body{
+    padding: 0 10px 10px;
+  }
+  .card__footer{
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 10px 10px
+  }
+}
+
+svg{
+  width: 70px;
+  height: 70px;
+  margin: 20px;
+  display:inline-block;
+}
+
+.app_dialog{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .modal__close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.app__modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(2px);
+  padding: 20px;
+  .card__header{
+    max-width: calc(100% - 46px);
+  }
+  &.show{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .modal__close-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.text-danger{
+  color: $red;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-accent{
+  color: $accent;
+}
+
+.text-white{
+  color: $white;
+}
+
+.text-dark{
+  color: $dark;
+}
+
+// ** PADDING ** //
+$paddings: '', 'b', 't', 'l', 'r', 'x', 'y';
+@each $padding in $paddings {
+  $p_type: '';
+  @if $padding == 'b'{
+    $p_type: '-bottom';
+  }@else if $padding == 't'{
+    $p_type: '-top';
+  }@else if $padding == 'l'{
+    $p_type: '-left';
+  }@else if $padding == 'r'{
+    $p_type: '-right';
+  }
+  @for $i from 0 through 50 {
+    .p#{$padding}-#{$i} {
+      @if $padding == 'x' {
+        @if $i == 0 {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }@else{
+          padding-left: $i + px !important;
+          padding-right: $i + px !important;
+        }
+      }@else if $padding == 'y'{
+        @if $i == 0 {
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }@else{
+          padding-top: $i + px !important;
+          padding-bottom: $i + px !important;
+        }
+      }
+      @else{
+        @if $i == 0 {
+          padding#{$p_type}: 0 !important;
+        }@else{
+          padding#{$p_type}: $i + px !important;
+        }
+      }
+    }
+  }
+}
+
+// ** MARGIN ** //
+$margins: '', 'b', 't', 'l', 'r', 'x', 'y';
+@each $margin in $margins {
+  $m_type: '';
+  @if $margin == 'b'{
+    $m_type: '-bottom';
+  }@else if $margin == 't'{
+    $m_type: '-top';
+  }@else if $margin == 'l'{
+    $m_type: '-left';
+  }@else if $margin == 'r'{
+    $m_type: '-right';
+  }
+  @for $i from 0 through 50 {
+    .m#{$margin}-#{$i} {
+      @if $margin == 'x' {
+        @if $i == 0 {
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+        }@else{
+          margin-left: $i + px !important;
+          margin-right: $i + px !important;
+        }
+      }@else if $margin == 'y'{
+        @if $i == 0 {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+        }@else{
+          margin-top: $i + px !important;
+          margin-bottom: $i + px !important;
+        }
+      }
+      @else{
+        @if $i == 0 {
+          margin#{$m_type}: 0 !important;
+        }@else{
+          margin#{$m_type}: $i + px !important;
+        }
+      }
+    }
+  }
+}
+
+.cursor-pointer{
+  cursor: pointer;
+}

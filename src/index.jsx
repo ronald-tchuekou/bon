@@ -1,38 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles/style.css';
+import "mirajs/dist/style/sass/style.css";
+import './utils/styles/style.css';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from './auth/login';
 import reportWebVitals from './reportWebVitals';
 import Admin from "./admin";
 import User from "./user";
-import Styled from "styled-components";
-
-const Error = Styled.div`
-    height: 100vh;
-    width: 100vw;
-    color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-  `
+import Error from "./errors/404";
+import Demo from './demo'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Switch>
-        <Route exact={true} path="/admin">
+        <Route path="/admin">
           <Admin/>
         </Route>
-        <Route exact={true} path="/user">
+        <Route path="/user">
           <User/>
         </Route>
         <Route exact={true} path={["/", "/login"]}>
           <Login />
         </Route>
+        <Route path={"/demo"}>
+          <Demo/>
+        </Route>
         <Route path="*">
-          <Error>Not Found</Error>
+          <Error/>
         </Route>
       </Switch>
     </Router>

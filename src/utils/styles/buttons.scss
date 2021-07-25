@@ -1,0 +1,181 @@
+/*!
+ * Copyright (c) 25/07/2021 10:21
+ * @author Ronald Tchuekou
+ * @email ronaldtchuekou@gmail.com
+ */
+
+.btn{
+  position: relative;
+  border: none;
+  outline:none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  margin: 5px;
+  color: $dark;
+  font-family: inherit;
+  font-size:  17px;
+  font-weight: 400;
+  transition: .3s;
+  background-color: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100%;
+
+  i{
+    font-size: inherit;
+    color: inherit;
+  }
+
+  &.persist-shadow{
+    box-shadow: 0 3px 3px 1px rgba(0, 0, 0, 0.16);
+  }
+
+  &:hover {
+    background-color: transparentize($dark, 0.8);
+    &.shadow {
+      box-shadow: 0 5px 15px 1px rgba(0, 0, 0, 0.16);
+      &:active {
+        box-shadow: unset;
+      }
+    }
+    &:disabled{
+      box-shadow: unset;
+      background: inherit!important;
+      color: #979797 !important;
+      cursor: default;
+    }
+
+    &:disabled{
+      background: transparent !important;
+      cursor: default!important;
+      color: #979797 !important;
+      &.contained{
+        background: rgba(201,201,201,0.65)!important;
+      }
+      &.outlined{
+        border: 1px solid rgba(201,201,201,0.65);
+      }
+    }
+
+    &.text-primary, &.outlined-primary{
+      background-color: transparentize($primary, 0.8);
+    }
+    &.text-accent, &.outlined-accent{
+      background-color: transparentize($accent, 0.8);
+    }
+    &.text-red, &.outlined-red{
+      background-color: transparentize($red, 0.8);
+    }
+    &.text-white, &.outlined-white{
+      background-color: transparentize($white, 0.8);
+    }
+  }
+
+  &:disabled{
+    background: transparent !important;
+    cursor: default!important;
+    color: #979797 !important;
+    &.contained{
+      background: rgba(201,201,201,0.65)!important;
+    }
+    &.outlined{
+      border: 1px solid rgba(201,201,201,0.65);
+    }
+  }
+
+  &.text-primary{
+    color: $primary;
+  }
+  &.text-accent{
+    color: $accent;
+  }
+  &.text-red{
+    color: $red;
+  }
+  &.text-white{
+    color: $white;
+  }
+
+  &.contained{
+    background: $dark;
+    color: $white;
+    &.contained-primary {
+      background: $primary;
+    }
+    &.contained-red{
+      background: $red;
+    }
+    &.contained-white {
+      background: $primary-light;
+      color: $primary;
+    }
+    &.contained-accent{
+      background: $accent;
+    }
+  }
+
+  &.outlined{
+    padding: 7px 14px;
+    border: 1px solid $dark;
+    &.outlined-primary {
+      border: 1px solid $primary;
+      color: $primary;
+    }
+    &.outlined-red{
+      border: 1px solid $red;
+      color: $red;
+    }
+    &.outlined-white {
+      border: 1px solid $primary-light;
+      color: $white;
+    }
+    &.outlined-accent{
+      border: 1px solid $accent;
+      color: $accent;
+    }
+  }
+
+  &.icon-btn{
+    border-radius: 50%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ripple .ripple__wrapper{
+  position: absolute;
+  background: #fff;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border-radius: 50%;
+  animation: animate 1s ease-out infinite;
+  &.ripple-primary{
+    background: $primary;
+  }
+  &.ripple-accent{
+    background: $accent;
+  }
+  &.ripple-red{
+    background: $red;
+  }
+  &.ripple-dark{
+    background: $dark;
+  }
+}
+
+@keyframes animate {
+  0%{
+    opacity: .3;
+    width: 0;
+    height: 0;
+  }
+  100%{
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+  }
+}
