@@ -1,0 +1,81 @@
+/*!
+ * Copyright (c) 25/07/2021 21:46
+ * @author Ronald Tchuekou
+ * @email ronaldtchuekou@gmail.com
+ */
+
+.text_input__wrapper{
+  display: flex;
+  flex-direction: column;
+  margin: 2px 5px 7px;
+  &.error{
+    input, input:hover, input:focus, textarea, textarea:hover, textarea:focus{
+      background: $bg-text-error;
+      border-color: $border-error
+    }
+    small{
+      color: $red;
+      margin: 0 3px;
+    }
+  }
+  label{
+    color: gray;
+    font-weight: 200;
+    font-size: 16px;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    margin: 3px;
+    text-overflow: ellipsis;
+  }
+  .input__wrapper{
+    .indicate{
+      display: none;
+    }
+    &.select__input{
+      position: relative;
+      input{
+        cursor: default;
+      }
+      .indicate{
+        display: block;
+        position: absolute;
+        top: 20%;
+        right: 5px;
+      }
+    }
+  }
+  input, textarea{
+    width: 100%;
+    font: inherit;
+    border: 1px solid $border-edit;
+    border-radius: 5px;
+    outline: none;
+    padding: 3.5px 10px;
+    color: $dark;
+    font-size: 16px;
+    background: $bg-text-edit;
+    transition: .3s;
+    font-weight: 500;
+    &:hover, &:active, &:focus{
+      background: $bg-text-hover;
+      border-color: $border-hover;
+    }
+  }
+  input{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  textarea{
+    padding: 10px;
+  }
+}
+
+.float__menu{
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  padding: 2px 0;
+}

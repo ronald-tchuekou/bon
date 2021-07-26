@@ -1,7 +1,7 @@
 import { Button, IconButton, Fab } from "./buttons";
 import { Modal, ModalHeader, ModalContent, ModalFooter } from './modal'
 import { Card, CardHeader, CardContent, CardFooter } from './card'
-import { TextInput } from './textInput'
+import { TextInput, Select, Textarea } from './textInput'
 
 export {
     Button,
@@ -15,5 +15,7 @@ export {
     CardHeader,
     CardContent,
     CardFooter,
-    TextInput
+    TextInput,
+    Select,
+    Textarea
 };

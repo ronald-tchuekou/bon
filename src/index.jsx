@@ -9,6 +9,7 @@ import Admin from "./admin";
 import User from "./user";
 import Error from "./errors/404";
 import Demo from './demo'
+import { TextInputDemo } from './demo/text_input'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -25,6 +26,9 @@ ReactDOM.render(
         </Route>
         <Route path={"/demo"}>
           <Demo/>
+        </Route>
+        <Route path={"/text-input"}>
+          <TextInputDemo/>
         </Route>
         <Route path="*">
           <Error/>

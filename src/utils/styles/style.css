@@ -198,6 +198,83 @@
     height: 200px;
   }
 }
+/*!
+ * Copyright (c) 25/07/2021 21:46
+ * @author Ronald Tchuekou
+ * @email ronaldtchuekou@gmail.com
+ */
+.text_input__wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 5px 7px;
+}
+.text_input__wrapper.error input, .text_input__wrapper.error input:hover, .text_input__wrapper.error input:focus, .text_input__wrapper.error textarea, .text_input__wrapper.error textarea:hover, .text_input__wrapper.error textarea:focus {
+  background: rgba(206, 82, 87, 0.19);
+  border-color: rgba(206, 82, 87, 0.32);
+}
+.text_input__wrapper.error small {
+  color: #ce5257;
+  margin: 0 3px;
+}
+.text_input__wrapper label {
+  color: gray;
+  font-weight: 200;
+  font-size: 16px;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 3px;
+  text-overflow: ellipsis;
+}
+.text_input__wrapper .input__wrapper .indicate {
+  display: none;
+}
+.text_input__wrapper .input__wrapper.select__input {
+  position: relative;
+}
+.text_input__wrapper .input__wrapper.select__input input {
+  cursor: default;
+}
+.text_input__wrapper .input__wrapper.select__input .indicate {
+  display: block;
+  position: absolute;
+  top: 20%;
+  right: 5px;
+}
+.text_input__wrapper input, .text_input__wrapper textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid rgba(63, 61, 86, 0.24);
+  border-radius: 5px;
+  outline: none;
+  padding: 3.5px 10px;
+  color: #2a2a2a;
+  font-size: 16px;
+  background: rgba(90, 87, 120, 0.09);
+  transition: 0.3s;
+  font-weight: 500;
+}
+.text_input__wrapper input:hover, .text_input__wrapper input:active, .text_input__wrapper input:focus, .text_input__wrapper textarea:hover, .text_input__wrapper textarea:active, .text_input__wrapper textarea:focus {
+  background: rgba(89, 193, 167, 0.15);
+  border-color: rgba(89, 193, 167, 0.28);
+}
+.text_input__wrapper input {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text_input__wrapper textarea {
+  padding: 10px;
+}
+
+.float__menu {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 4px;
+  padding: 2px 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -325,6 +402,10 @@ svg {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.text-center {
+  text-align: center;
 }
 
 .text-danger {
