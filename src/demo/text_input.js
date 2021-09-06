@@ -7,6 +7,7 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react'
 import { Button, Modal, ModalContent, ModalFooter, ModalHeader, Select, TextInput, Textarea } from '../base-components'
 import Dialog from '../utils/js/dialog'
+import { InitRipple } from '../utils/js/init'
 
 export const TextInputDemo = () => {
 
@@ -19,6 +20,7 @@ export const TextInputDemo = () => {
     const user_ref = useRef(null)
 
     useEffect(() => {
+        InitRipple();
     }, [])
 
     const content = {

@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 .d-flex {
   display: flex;
+}
+.d-flex.flex-col {
+  flex-direction: column;
+}
+.d-flex.flex-row {
   flex-direction: row;
 }
 .d-flex.justify-content-center {
@@ -3492,8 +3497,16 @@ svg {
   cursor: pointer;
 }
 
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
 ._not_found_page {
-  background-color: #cfe0ddff;
+  background-color: rgba(0, 0, 0, 0.15);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -3504,7 +3517,7 @@ svg {
 }
 
 .login-container {
-  background: #cfe0ddff;
+  background: rgba(0, 0, 0, 0.15);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -3516,32 +3529,22 @@ svg {
   width: 100%;
   height: 100%;
 }
-.login-container .login_wrapper {
-  max-width: 800px;
-  background: white;
-  display: flex;
+.login-container .login_img {
+  height: 300px;
+  width: 300px;
 }
-.login-container .login_wrapper .login_img {
-  flex: 1;
+.login-container .login_img img {
+  height: 100%;
+  width: 100%;
 }
 @media only screen and (max-width: 700px) {
-  .login-container .login_wrapper .login_img {
+  .login-container .login_img {
     display: none;
   }
 }
-.login-container .login_wrapper .login_form {
-  flex: 1;
-  padding: 10px;
-}
-.login-container .login_wrapper .login_form .title {
-  text-align: center;
-  font-size: 2rem;
-  color: #3f3d56;
-  margin-bottom: 10px;
-}
 
 .app__root {
-  background: #cfe0ddff;
+  background: rgba(0, 0, 0, 0.15);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -3600,6 +3603,74 @@ svg {
   padding: 10px;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.expandable-list__wrapper {
+  background: #ffffff;
+  transition: 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.75);
+}
+.expandable-list__wrapper.expanded {
+  margin: 5px 0;
+}
+.expandable-list__wrapper.expanded > .expandable-list__item {
+  background: linear-gradient(360deg, #35353538, transparent);
+}
+.expandable-list__wrapper.expanded > .expandable-list__item .expandable-list__item-icon.expandable-list__itme-state {
+  transform: rotate(0deg);
+}
+.expandable-list__wrapper .expandable-list__item {
+  display: flex;
+  height: 35px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+.expandable-list__wrapper .expandable-list__item:hover .expandable-list__options {
+  display: flex;
+}
+.expandable-list__wrapper .expandable-list__item .expandable-list__item-icon {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  transition: 0.3s;
+}
+.expandable-list__wrapper .expandable-list__item .expandable-list__item-icon:hover {
+  color: rgba(0, 0, 0, 0.9);
+}
+.expandable-list__wrapper .expandable-list__item .expandable-list__item-icon.expandable-list__itme-state {
+  font-size: 25px;
+  transform: rotate(-90deg);
+}
+.expandable-list__wrapper .expandable-list__item .expandable-list__item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 35px;
+  width: 100%;
+  transition: 0.3s;
+  padding: 0 12px;
+  cursor: default;
+}
+.expandable-list__wrapper .expandable-list__item .expandable-list__options {
+  display: none;
+  height: 35px;
+  padding-right: 10px;
+}
+.expandable-list__wrapper .expandable-list__item .expandable-list__options .expandable-list__item-icon {
+  width: auto;
+}
+.expandable-list__wrapper .expandable-list__sub {
+  display: none;
+  background: inherit;
+  padding-left: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

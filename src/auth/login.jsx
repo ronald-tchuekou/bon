@@ -17,9 +17,9 @@ export default function Login () {
             <div className="app__card">
                 <div className='card__body p-10 d-flex justify-content-between'>
                     <div className="login_img">
-                        <img src={"/login_images/login.png"} alt="Analyzer login page"/>
+                        <img src={"/auth_images/login.png"} alt="Analyzer login page"/>
                     </div>
-                    <div className="p-10">
+                    <div className="p-10 d-flex flex-col justify-content-center">
                         <h3 className="text-center">{Lang.login.title[lang]}</h3>
                         <TextInput
                             label={Lang.login.username[lang]}
