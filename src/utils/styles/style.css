@@ -3506,24 +3506,29 @@ svg {
 }
 
 ._not_found_page {
+  background-image: url("../assets/images/bg2.jpg");
+  background-size: cover;
   background-color: rgba(0, 0, 0, 0.15);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: gray;
+  color: #3f3d56;
   font-size: 3rem;
 }
 
 .login-container {
-  background: rgba(0, 0, 0, 0.15);
+  background-image: url("../assets/images/bg2.jpg");
+  background-clip: content-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.15);
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 .login-container img {
   width: 100%;
